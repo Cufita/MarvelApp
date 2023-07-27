@@ -8,6 +8,8 @@ import { useParams } from "react-router-dom";
 //Import utils
 
 import { fetchHero } from "../utils/utils";
+
+import "./HeroDetails.css";
 export default function HeroDetails() {
   let { id } = useParams();
 
@@ -21,10 +23,10 @@ export default function HeroDetails() {
 
   if (!hero) return;
   return (
-    <div className="container large">
-      <div>
+    <div className="container_large">
+      <div className="container_header">
         <Link to="/">
-          <img src={Logo} alt="marvel logo" />
+          <img className="logo" src={Logo} alt="marvel logo" />
         </Link>
       </div>
       <div className="hero_details-container">
@@ -33,8 +35,7 @@ export default function HeroDetails() {
           alt="hero image"
         />
         <div className="hero_details">
-          <h3>Name</h3>
-          <p>{hero.name}</p>
+          <h2>{hero.name}</h2>
           {hero.description ? (
             <>
               <h4>Description</h4>

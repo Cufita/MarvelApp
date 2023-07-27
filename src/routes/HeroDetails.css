@@ -1,0 +1,14 @@
+.logo {
+  margin: 15px;
+  width: 100px;
+}
+
+.hero_details-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.hero_details-container img {
+  margin: 35px;
+  width: 37vw;
+}
