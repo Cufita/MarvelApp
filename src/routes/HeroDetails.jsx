@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Logo from "../assets/Marvel_Logo.png";
 
 //Import hooks
 import { useParams } from "react-router-dom";
@@ -20,6 +22,11 @@ export default function HeroDetails() {
   if (!hero) return;
   return (
     <div className="container large">
+      <div>
+        <Link to="/">
+          <img src={Logo} alt="marvel logo" />
+        </Link>
+      </div>
       <div className="hero_details-container">
         <img
           src={`${hero.thumbnail.path}.${hero.thumbnail.extension}`}
@@ -38,7 +45,7 @@ export default function HeroDetails() {
             <h4>Series</h4>
             <ul>
               {hero.series.items.map((series) => (
-                <li key={Math.random * 1000}>{series.name}</li>
+                <li key={series.name}>{series.name}</li>
               ))}
             </ul>
           </div>

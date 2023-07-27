@@ -26,7 +26,6 @@ export default function Home() {
 
   return (
     <Container>
-      <h1>Marvel Hero Searcher</h1>
       <SearchBar setter={setHeroes} />
       <Table>{cards ? cards : null}</Table>
     </Container>

@@ -1,4 +1,9 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
+
+import logo from "../assets/Marvel_Logo.png";
+
+import "./SearchBarStyle.css";
 
 // Import utils
 
@@ -21,7 +26,10 @@ export default function SearchBar({ setter }) {
 
   return (
     <form action="">
-      <input type="text" placeholder="Search Hero..." ref={input} />
+      <Link to="/">
+        <img className="HomeButton" src={logo} alt="" />
+      </Link>
+      <input type="text" placeholder="Buscar" ref={input} />
       <button onClick={handleClick}>Search</button>
     </form>
   );
