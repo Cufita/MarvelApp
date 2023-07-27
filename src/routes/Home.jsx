@@ -4,8 +4,22 @@ import { useState, useEffect } from "react";
 import Container from "../components/Container";
 import SearchBar from "../components/SearchBar";
 import Table from "../components/Table";
+import Card from "../components/Card";
 export default function Home() {
   const [heroes, setHeroes] = useState([]);
+
+  let cards;
+
+  if (heroes) {
+    cards = heroes.map((hero) => {
+      <Card
+        name={hero.name}
+        id={hero.id}
+        key={hero.id}
+        thumbnail={`${hero.thumbnail.path}`}
+      />;
+    });
+  }
   return (
     <>
       <Container>
