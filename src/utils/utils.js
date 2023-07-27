@@ -19,19 +19,15 @@ const fetchHeroes = async (value) => {
 
   const hashOnline = "cb7180257c1d7a69c533200be688ea67";
 
-  console.log(hash);
-  console.log(hashOnline);
-
   const url1 =
     "http://gateway.marvel.com/v1/public/characters?ts=1&apikey=e3d83ba42a698c09825cd29e31b7cf19&hash=cb7180257c1d7a69c533200be688ea67&nameStartsWith=" +
     value;
 
-  console.log(url1);
   try {
     const response = await fetch(url1);
     const data = await response.json();
-    console.log(data);
-    return data;
+    console.log(data.data.results);
+    return data.data.results;
   } catch (err) {
     console.log(err);
     return;
@@ -43,12 +39,12 @@ const fetchHero = async (id) => {
     "http://gateway.marvel.com/v1/public/characters/" +
     id +
     "?ts=1&apikey=e3d83ba42a698c09825cd29e31b7cf19&hash=cb7180257c1d7a69c533200be688ea67";
-  console.log(url);
+
   try {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
-    return data;
+    console.log(data.data.results);
+    return data.data.results;
   } catch (err) {
     console.log(err);
     return;

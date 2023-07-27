@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 
 // Import utils
 
-import { fetchHeroes, fetchHero } from "../utils/utils";
+import { fetchHeroes } from "../utils/utils";
 export default function SearchBar({ setter }) {
   let input = useRef("");
 
@@ -12,7 +12,7 @@ export default function SearchBar({ setter }) {
     if (value == "") return;
 
     try {
-      let heroes = await fetchHero(value);
+      let heroes = await fetchHeroes(value);
       setter(heroes);
     } catch (err) {
       return console.error(err);

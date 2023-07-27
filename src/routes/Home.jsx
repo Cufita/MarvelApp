@@ -1,36 +1,34 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import Container from "../components/Container";
 import SearchBar from "../components/SearchBar";
 import Table from "../components/Table";
 import Card from "../components/Card";
+
+const IMAGE_SIZE = "portrait_fantastic";
+
 export default function Home() {
-  const [heroes, setHeroes] = useState([]);
+  const [heroes, setHeroes] = useState();
 
   let cards;
 
   if (heroes) {
-    cards = heroes.map((hero) => {
+    cards = heroes.map((hero) => (
       <Card
-        name={hero.name}
         id={hero.id}
+        thumbnail={`${hero.thumbnail.path}/${IMAGE_SIZE}.${hero.thumbnail.extension}`}
+        name={hero.name}
         key={hero.id}
-        thumbnail={`${hero.thumbnail.path}`}
-      />;
-    });
+      />
+    ));
   }
+
   return (
-    <>
-      <Container>
-        <h1>Marvel Hero Searcher</h1>
-        <SearchBar setter={setHeroes} />
-        <Table>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-        </Table>
-      </Container>
-    </>
+    <Container>
+      <h1>Marvel Hero Searcher</h1>
+      <SearchBar setter={setHeroes} />
+      <Table>{cards ? cards : null}</Table>
+    </Container>
   );
 }

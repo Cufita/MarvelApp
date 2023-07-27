@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Card(id, thumbnail, name) {
+export default function Card({ id, thumbnail, name }) {
   return (
     <Link to={`/${id}`}>
       <div className="card">
