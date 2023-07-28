@@ -1,7 +1,7 @@
 /*All this code was made with the purpose of making it the safest way, due to some problem it doesn't work because the MD5 library doesnt give me the correct hashcode, so, i opted for the second option :) */
 import MD5 from "crypto-js/md5";
 
-const API_URL = "http://gateway.marvel.com";
+const API_URL = "https://gateway.marvel.com";
 const getHash = (ts, secretKey, PublicKey) => {
   return MD5(ts + secretKey + PublicKey).toString();
 };

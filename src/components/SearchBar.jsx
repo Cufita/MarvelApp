@@ -17,11 +17,35 @@ export default function SearchBar({ setter }) {
     if (value == "") return;
 
     try {
-      let heroes = await fetchHeroes(value);
-      setter(heroes);
+      // Check if the input is a URL
+      if (isURL(value)) {
+        const characterName = extractCharacterNameFromURL(value);
+        if (characterName) {
+          const heroes = await fetchHeroes(characterName);
+          setter(heroes);
+        } else {
+          console.error("Invalid URL");
+        }
+      } else {
+        // If it's not a URL, assume it's the character name
+        const heroes = await fetchHeroes(value);
+        setter(heroes);
+      }
     } catch (err) {
-      return console.error(err);
+      console.error(err);
     }
+  };
+
+  const isURL = (str) => {
+    // Simple URL validation
+    const pattern = /^(http|https):\/\/[^ "]+$/;
+    return pattern.test(str);
+  };
+
+  const extractCharacterNameFromURL = (url) => {
+    // Extract the character name from the URL
+    const urlParts = url.split("/");
+    return urlParts[urlParts.length - 1];
   };
 
   return (
