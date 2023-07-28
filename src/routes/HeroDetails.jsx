@@ -43,10 +43,10 @@ export default function HeroDetails() {
             </>
           ) : null}
           <div className="hero_series">
-            <h4>Series</h4>
+            <h4>Comics</h4>
             <ul>
-              {hero.series.items.map((series) => (
-                <li key={series.name}>{series.name}</li>
+              {hero.comics.items.map((comics) => (
+                <li key={comics.name}>{comics.name}</li>
               ))}
             </ul>
           </div>

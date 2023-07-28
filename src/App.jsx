@@ -11,7 +11,7 @@ import HeroDetails from "./routes/HeroDetails";
 
 function App() {
   return (
-    <div>
+    <div className="mainDiv">
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
