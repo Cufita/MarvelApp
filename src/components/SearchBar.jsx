@@ -17,7 +17,6 @@ export default function SearchBar({ setter }) {
     if (value == "") return;
 
     try {
-      // Check if the input is a URL
       if (isURL(value)) {
         const characterName = extractCharacterNameFromURL(value);
         if (characterName) {
@@ -27,7 +26,6 @@ export default function SearchBar({ setter }) {
           console.error("Invalid URL");
         }
       } else {
-        // If it's not a URL, assume it's the character name
         const heroes = await fetchHeroes(value);
         setter(heroes);
       }
@@ -37,13 +35,11 @@ export default function SearchBar({ setter }) {
   };
 
   const isURL = (str) => {
-    // Simple URL validation
     const pattern = /^(http|https):\/\/[^ "]+$/;
     return pattern.test(str);
   };
 
   const extractCharacterNameFromURL = (url) => {
-    // Extract the character name from the URL
     const urlParts = url.split("/");
     return urlParts[urlParts.length - 1];
   };

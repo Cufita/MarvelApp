@@ -7,6 +7,7 @@
   width: 310px;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
 }
 
 .card:hover::before {
@@ -30,7 +31,7 @@
   position: absolute;
 }
 
-.card img {
+.card .mainImg {
   width: 100%;
   display: flex;
 }
@@ -47,4 +48,21 @@
   top: 1;
   right: 0;
   bottom: 0;
+}
+
+.star {
+  position: absolute;
+  margin: 15px;
+  width: 35px;
+  left: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.star-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }
