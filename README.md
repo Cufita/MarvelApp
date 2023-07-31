@@ -10,6 +10,6 @@ Aunque todavía no he logrado completar todo el proyecto, estoy muy contento/a c
 
 Quiero expresar mi gratitud por la oportunidad brindada y por todo el conocimiento compartido durante el bootcamp.
 
-Enlace al deploy: https://marvelapp-lenio-labs.vercel.app/ 👋😄
+Enlace al deploy: https://marvel-hero-chi.vercel.app/ 👋😄
 
  
